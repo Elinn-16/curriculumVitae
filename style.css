@@ -1,0 +1,194 @@
+ body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            background-color: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.08);
+            border-radius: 0;
+            overflow: hidden;
+            position: relative; /* Para posicionar el botón */
+        }
+        .pdf-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+        .pdf-button:hover {
+            background-color: #34495e;
+        }
+        .pdf-button i {
+            font-size: 1.1em;
+        }
+        .pdf-button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .left-column {
+            background-color: #ecf0f1;
+            padding: 30px 25px;
+            min-height: 100vh;
+        }
+        .right-column {
+            padding: 30px 40px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #1e3a8a;
+            margin: 0 0 10px;
+            font-size: 2.4em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin: 0 0 20px;
+            font-weight: 300;
+        }
+        .contact {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .contact-item {
+            display: block;
+            margin: 8px 0;
+            color: #2c3e50;
+            font-weight: 400;
+        }
+        .contact a {
+            color: #1e3a8a;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact a:hover {
+            color: #34495e;
+        }
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: block;
+            border: 3px solid #1e3a8a;
+            object-fit: cover;
+        }
+        section {
+            margin-bottom: 25px;
+        }
+        h2 {
+            color: #1e3a8a;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 i {
+            color: #1e3a8a;
+            font-size: 1.2em;
+        }
+        h3 {
+            color: #1e3a8a;
+            font-size: 1.1em;
+            margin: 15px 0 8px;
+            font-weight: 600;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        li:before {
+            content: "▸";
+            color: #1e3a8a;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        .skills-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .skill-tag {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 400;
+        }
+        .education-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #bdc3c7;
+        }
+        .education-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .dates {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                margin: 10px;
+                gap: 20px;
+                padding: 0;
+            }
+            .pdf-button {
+                position: static;
+                margin: 10px auto;
+                display: block;
+                text-align: center;
+            }
+            .left-column, .right-column {
+                padding: 20px;
+            }
+            h1 { font-size: 2em; }
+            .profile-photo { width: 100px; height: 100px; }
+        }

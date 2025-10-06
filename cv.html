@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Martina Elin Nievas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="left-column">
+            <header>
+                <!-- Placeholder para foto -->
+                <img src="https://via.placeholder.com/140x140/1e3a8a/white?text=Foto" alt="Foto de Martina Elin Nievas" class="profile-photo">
+                <h1>Martina Elin Nievas</h1>
+                <p class="subtitle">Estudiante de desarrollo de software en Escuela Técnica PROA Capital Centro</p>
+                <div class="contact">
+                    <span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:martinanievas07@gmail.com">martinanievas07@gmail.com</a></span>
+                    <span class="contact-item"><i class="fas fa-phone"></i> +54 351 6598384</span>
+                    <span class="contact-item"><i class="fas fa-globe"></i> <a href="https://www.reallygreatsite.com" target="_blank">www.reallygreatsite.com</a></span>
+                </div>
+            </header>
+
+            <section>
+                <h2><i class="fas fa-user"></i> Sobre mí</h2>
+                <p>Estudiante de desarrollo de software con interés en desarrollo web y proyectos tecnológicos. Aprendo rápido y disfruto trabajar en equipo.</p>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-language"></i> Idiomas</h2>
+                <ul>
+                    <li>Español: Nativo</li>
+                    <li>Inglés: B2 (Intermedio - alto)</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="right-column">
+            <section>
+                <h2><i class="fas fa-briefcase"></i> Experiencia Laboral</h2>
+                <h3>Desarrolladora web</h3>
+                <p class="dates">2025 Mayo - Agosto | Pasantías en AMAIA</p>
+                <ul>
+                    <li>Participación en proyectos de desarrollo web con HTML, CSS y JavaScript.</li>
+                    <li>Colaboración en diseño visual y pruebas de funcionalidades.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
+                <div class="education-item">
+                    <h3>Nivel Secundario | Bachillerato en Software</h3>
+                    <p class="dates">2020 - 2025 | ESCUELA TÉCNICA PROA SEDE CENTRO</p>
+                </div>
+                <div class="education-item">
+                    <h3>Nivel Primario</h3>
+                    <p class="dates">2014 - 2019 | ESCUELA ESCRIBANO OSCAR SOTO LOPEZ</p>
+                </div>
+                <div class="education-item">
+                    <h3>Trayecto de Formación Musical en Instrumento Ciclo Inicial</h3>
+                    <p class="dates">2016 - 2019 | CONSERVATORIO SUPERIOR DE MÚSICA “FÉLIX T. GARZÓN”</p>
+                </div>
+            </section>
+
+            <section>
+                <h2><i class="fas fa-tools"></i> Habilidades Adicionales</h2>
+                <div class="skills-section">
+                    <div class="skill-category">
+                        <h3>Habilidades Técnicas</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Desarrollo web (HTML, CSS, JavaScript)</span>
+                            <span class="skill-tag">Diseño visual (Photoshop, Canva)</span>
+                            <span class="skill-tag">Programación básica (Python)</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Habilidades Blandas</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Trabajo en equipo</span>
+                            <span class="skill-tag">Resolución de problemas</span>
+                            <span class="skill-tag">Aprendizaje rápido</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Herramientas</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">GitLab</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">PSeInt</span>
+                            <span class="skill-tag">Tinkercad</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function descargarPDF() {
+            const button = document.getElementById('pdfBtn');
+            button.disabled = true;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando PDF...';
+
+            const element = document.querySelector('.container'); // Captura solo el contenedor principal
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5], // Márgenes en cm (arriba, derecha, abajo, izquierda)
+                filename: 'CV-Martina-Nievas.pdf',
+                image: { type: 'jpeg', quality: 0.98 }, // Alta calidad para imágenes y colores
+                html2canvas: { 
+                    scale: 2, // Mayor resolución para detalles finos (iconos, textos)
+                    useCORS: true, // Para cargar imágenes externas como la foto placeholder
+                    letterRendering: true // Mejora renderizado de fuentes
+                },
+                jsPDF: { 
+                    unit: 'cm', 
+                    format: 'a4', 
+                    orientation: 'portrait' // Vertical para CV
+                }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Reset del botón después de la descarga
+                button.disabled = false;
+                button.innerHTML = '<i class="fas fa-download"></i> Descargar PDF';
+            }).catch((error) => {
+                console.error('Error al generar PDF:', error);
+                button.disabled = false;
+                button.innerHTML = '<i class="fas fa-download"></i> Descargar PDF';
+                alert('Error al generar el PDF. Intenta recargar la página.');
+            });
+        }
+
+        <button class="pdf-button" onclick="descargarPDF()" id="pdfBtn">
+            <i class="fas fa-download"></i> Descargar PDF
+        </button>
+
+    </script>
+</body>
+</html>
